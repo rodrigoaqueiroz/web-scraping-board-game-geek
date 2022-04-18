@@ -9,10 +9,10 @@ cursor = db_connection.cursor()
 # cursor.execute(sql)
 
 
-def insert_data(name, year):    
+def insert_data(name, year, popularity):    
   cursor = db_connection.cursor()
-  sql = "INSERT INTO bg (bg_name, year) VALUES (%s, %s)"
-  values = (name, year)
+  sql = "INSERT INTO bg (bg_name, year, popularity) VALUES (%s, %s, %s)"
+  values = (name, year, popularity)
   cursor.execute(sql, values)
   db_connection.commit()
 

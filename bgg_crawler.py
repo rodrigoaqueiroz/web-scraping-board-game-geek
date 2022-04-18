@@ -5,6 +5,7 @@ from query import insert_data
 
 URL_BASE = 'https://boardgamegeek.com/browse/boardgame/page/1'
 bg_names = []
+bg_links = []
 
 
 def fetch_url(url):
@@ -18,15 +19,19 @@ def fetch_url(url):
         response = None
 
 
-def get_boardgame_names(content):
-    CONT = 1
+def get_boardgame_info(content):
+    cont = 1
     for name in content.find_all('tr', id="row_"):
         bg_names.append(
-            (name.find('div',  id = f'results_objectname{CONT}').text.replace('\n', '')[:-6],
-            name.find('div',  id = f'results_objectname{CONT}').text.replace('\n', '')[-5:-1]),
+            (name.find('div',  id = f'results_objectname{cont}').text.replace('\n', '')[:-6],
+            name.find('div',  id = f'results_objectname{cont}').text.replace('\n', '')[-5:-1],
+            name.find_all('td',  class_ = 'collection_bggrating')[-1].text.split().pop())
         )
-        insert_data(bg_names[CONT-1][0], bg_names[CONT-1][1])
-        CONT += 1
+        details = name.find('a',  class_ = 'primary')['href']
+        page = f'https://boardgamegeek.com{details}'
+        bg_links.append(page)
+        insert_data(bg_names[len(bg_names)-1][0], bg_names[len(bg_names)-1][1], bg_names[len(bg_names)-1][2])
+        cont += 1
     return bg_names
         
 
@@ -34,19 +39,5 @@ def next_page():
     for page in range(1,11):
         url = f'https://boardgamegeek.com/browse/boardgame/page/{page}'
         content = fetch_url(url)
-        # if content not in bg_names:
-        get_boardgame_names(content)
-    # return bg_names
-    
-
-# print(fetch_url(URL_BASE).find('div',  id = 'results_objectname1').text.split()[0])
-# print(fetch_url(URL_BASE).find('tr div td td', id="row_").text.split()[0])
-# print(get_boardgame_names(fetch_url(URL_BASE)))
-print(next_page())
-# print(len(next_page()))
-print(bg_names)
-# print(set(bg_names))
-
-# a = [(1,2),(3,4),(5,6),(7,8),(9,0)]
-# print(a[0][1])
-# print(bg_names)
+        get_boardgame_info(content)
+    return bg_names
