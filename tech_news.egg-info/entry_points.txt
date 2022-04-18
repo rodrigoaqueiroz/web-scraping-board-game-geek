@@ -1,4 +1,0 @@
-[console_scripts]
-tech-news-analyzer = tech_news.menu:analyzer_menu
-tech-news-collector = tech_news.menu:collector_menu
-

@@ -1,8 +1,0 @@
-setup.cfg
-setup.py
-tech_news.egg-info/PKG-INFO
-tech_news.egg-info/SOURCES.txt
-tech_news.egg-info/dependency_links.txt
-tech_news.egg-info/entry_points.txt
-tech_news.egg-info/requires.txt
-tech_news.egg-info/top_level.txt
