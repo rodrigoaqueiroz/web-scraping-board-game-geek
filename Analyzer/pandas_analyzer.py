@@ -9,6 +9,7 @@ df.drop(df.loc[df['best_for'] == 0].index, inplace=True)
 
 def best_for_chart_bar(data_frame):
   chart = data_frame.groupby(['best_for']).best_for.count().sort_values().plot(kind='bar')
+  plt.savefig('./best_for_chart_bar.png')
   return chart
 
 
@@ -17,6 +18,7 @@ def correlation_matrix(data_frame):
   plt.figure(figsize=(8, 6))
   sns.heatmap(corr_df, annot=True)
   plt.show()
+  plt.savefig('./corr.png')
   # Just to check possible relation between year and popularity ~ Don't relevant in this case.
 
 
@@ -38,3 +40,6 @@ def heavier_game(data_frame):
 def lighter_game(data_frame):
     lighter = df.loc[df['weigth'] == df['weigth'].min()]
     return lighter
+
+correlation_matrix(df)
+best_for_chart_bar(df)
