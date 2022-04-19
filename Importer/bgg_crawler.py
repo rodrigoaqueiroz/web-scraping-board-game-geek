@@ -43,13 +43,13 @@ def get_boardgame_info(content):
                     best_for = 0
                 else:
                     best_for = data['userplayers']['best'][0]['max']
-                weigth = data['boardgameweight']['averageweight']
+                weight = data['boardgameweight']['averageweight']
                 insert_data(
                     bg_names[len(bg_names)-1][0], 
                     bg_names[len(bg_names)-1][1], 
                     bg_names[len(bg_names)-1][2],
                     best_for,
-                    weigth)
+                    weight)
         cont += 1
     return bg_names
         
