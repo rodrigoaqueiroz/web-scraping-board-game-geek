@@ -103,7 +103,7 @@ O arquivo `requirements.txt` contém todas as dependências que foram utilizadas
 ## Raspagem
 
 A lista de jogos a ser raspadas está disponível na aba Browse/All BoardGames no _BGG_: https://boardgamegeek.com/browse/boardgame.
-Os devem foram salvos no banco de dados MySQL, usando as funções python implementadas no módulo `query.py`, a conexão com o DB está no módulo `database.py`
+Os jogos foram salvos no banco de dados MySQL, usando as funções python implementadas no módulo `query.py`, a conexão com o DB está no módulo `database.py`
 
 ---
 
