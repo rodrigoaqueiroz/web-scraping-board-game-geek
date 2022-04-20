@@ -38,9 +38,9 @@ A lista com o rank dos jogos pode ser obtido no [BoardGame Rank](https://boardga
 
 # Estrutura de Arquivos e Pastas
 
-### Os Arquivos:
+### Os Arquivos
 
-**Na pasta raiz**
+**Na pasta raiz:**
 
 - `requirements.txt` e `dev-equirements.txt` para adicionar as dependências que foram utilizadas no projeto.
 
@@ -48,11 +48,11 @@ A lista com o rank dos jogos pode ser obtido no [BoardGame Rank](https://boardga
 
 - `query.py` por adicionar as informações coletadas no banco de dados
 
-**Na pasta Analyzer**
+**Na pasta Analyzer:**
 
 - `corr.png` e `best_for_chart_bar` com as imagens plotadas de correlação e gráfico de barra de quantidade indicada de jogadores, respetivamente.
 
-- `bg_analyze.ipynb`, um arquivo jupyter notebook mostrando as análises feitas: jogo mais popular, jogo menos popular, jogo mais pesado, jogo mais leve e os dois gráficos acima (de correlação e best for).
+- `bg_analyze.ipynb`, um arquivo jupyter notebook mostrando as análises feitas: jogo mais popular, jogo menos popular, jogo mais pesado, jogo mais leve e os dois gráficos acima (de correlação e best for). Todas as funções implementadas estão no arquivo __pandas_analyzer.py__
 
 - `database.py` é responsável pela conexão com o banco de dados;
 
