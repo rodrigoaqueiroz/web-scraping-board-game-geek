@@ -40,7 +40,19 @@ A lista com o rank dos jogos pode ser obtido no [BoardGame Rank](https://boardga
 
 ### Os Arquivos:
 
+**Na pasta raiz**
+
 - `requirements.txt` e `dev-equirements.txt` para adicionar as dependências que foram utilizadas no projeto.
+
+- `database.py` é responsável pela conexão com o banco de dados;
+
+- `query.py` por adicionar as informações coletadas no banco de dados
+
+**Na pasta Analyzer**
+
+- `corr.png` e `best_for_chart_bar` com as imagens plotadas de correlação e gráfico de barra de quantidade indicada de jogadores, respetivamente.
+
+- `bg_analyze.ipynb`, um arquivo jupyter notebook mostrando as análises feitas: jogo mais popular, jogo menos popular, jogo mais pesado, jogo mais leve e os dois gráficos acima (de correlação e best for).
 
 - `database.py` é responsável pela conexão com o banco de dados;
 
@@ -57,21 +69,28 @@ __Analyzer__: Análises e gráficos das informações coletadas da lista de jogo
 ---
 
 # Como desenvolver
+1. **clone o repositório**
+```bash
+git clone git@github.com:rodrigoaqueiroz/web-scraping-board-game-geek.git
+```
+- Entre na pasta do repositório que você acabou de clonar:
+```bash
+cd web-scraping-board-game-geek
+```
 
-
-1. **criar o ambiente virtual**
+2. **crie o ambiente virtual**
 
 ```bash
 $ python3 -m venv .venv
 ```
 
-2. **ativar o ambiente virtual**
+3. **ative o ambiente virtual**
 
 ```bash
 $ source .venv/bin/activate
 ```
 
-3. **instalar as dependências no ambiente virtual**
+4. **instale as dependências no ambiente virtual**
 
 ```bash
 $ python3 -m pip install -r requirements.txt
