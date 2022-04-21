@@ -9,7 +9,7 @@
 - [Estrutura](#estrutura-de-arquivos-e-pastas)
   - [arquivos](#os-arquivos)
   - [pastas](#as-pastas)
-- [Ambiente Virtual](#como-desenvolver)
+- [Como desenvolver](#como-desenvolver)
 - [Raspagem](#raspagem)
 - [Contatos](#contatos)
 ---
